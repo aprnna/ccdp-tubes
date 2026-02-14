@@ -4,7 +4,7 @@ import com.perpustakaan.domain.DigitalItem;
 import com.perpustakaan.domain.EBook;
 import com.perpustakaan.patterns.behavioral.observer.LibraryCatalog;
 import com.perpustakaan.patterns.behavioral.observer.NotificationService;
-import com.perpustakaan.patterns.behavioral.observer.User;
+import com.perpustakaan.patterns.behavioral.observer.UserObserver;
 
 /**
  * TestObserver - Menguji Observer Pattern.
@@ -19,7 +19,7 @@ public class TestObserver {
         LibraryCatalog catalog = new LibraryCatalog();
 
         // tambah observer
-        catalog.addObserver(new User("Ucok"));
+        catalog.addObserver(new UserObserver("Ucok"));
         catalog.addObserver(new NotificationService());
 
         // buat objek domain DigitalItem
