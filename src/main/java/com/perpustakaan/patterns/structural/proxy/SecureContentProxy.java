@@ -24,31 +24,26 @@ public class SecureContentProxy implements ContentService {
         System.out.println("\nUser: " + user.getUsername()
                 + " attempting to access: " + item.getTitle());
 
-        // 1️⃣ Login validation
         if (!user.isLoggedIn()) {
             System.out.println("ACCESS DENIED: User not logged in.");
             return;
         }
 
-        // 2️⃣ Subscription validation
         if (!user.hasActiveSubscription()) {
             System.out.println("ACCESS DENIED: No active subscription.");
             return;
         }
 
-        // 3️⃣ Age validation
         if (user.getAge() < 17) {
             System.out.println("ACCESS DENIED: Age restriction (17+ required).");
             return;
         }
 
-        // 4️⃣ Loan validation
         if (!LoanRegistry.hasAccess(user.getUsername(), item.getTitle())) {
             System.out.println("ACCESS DENIED: Item not actively borrowed.");
             return;
         }
 
-        // 5️⃣ Lazy loading + caching
         RealContentService realService = cache.get(item.getTitle());
 
         if (realService == null) {

@@ -20,7 +20,6 @@ public class TestProxy {
         User underAge = new User("Cici", true, true, 15);
         User notLoggedIn = new User("Doni", false, true, 22);
 
-        // Simulasi bahwa Andi sudah meminjam Clean Code
         LoanRegistry.registerLoan("Andi", "Clean Code");
 
         System.out.println("\n--- Not Logged In Attempt ---");

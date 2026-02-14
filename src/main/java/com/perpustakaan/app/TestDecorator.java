@@ -24,7 +24,6 @@ public class TestDecorator {
                                         System.out.println("Membaca konten buku digital...");
                                     }
 
-                                    // 🔥 WAJIB DITAMBAHKAN setelah upgrade
                                     @Override
                                     public String getDescription() {
                                         return "Buku Digital";
@@ -33,10 +32,7 @@ public class TestDecorator {
                         )
                 );
 
-        // behaviour lama
         book.readContent();
-
-        // 🔥 behaviour baru dari decorator
         System.out.println(book.getDescription());
     }
 }

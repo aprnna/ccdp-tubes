@@ -13,18 +13,15 @@ import com.perpustakaan.domain.DigitalItem;
  */
 public class DigitalItemCategoryManager {
 
-    // Registry Multiton
     private static final Map<String, DigitalItemCategoryManager> instances = new HashMap<>();
 
     private String categoryType;
     private List<DigitalItem> items = new ArrayList<>();
 
-    // Constructor private
     private DigitalItemCategoryManager(String categoryType) {
         this.categoryType = categoryType;
     }
 
-    // Ambil instance berdasarkan tipe
     public static synchronized DigitalItemCategoryManager getInstance(String categoryType) {
         if (!instances.containsKey(categoryType)) {
             instances.put(categoryType, new DigitalItemCategoryManager(categoryType));
@@ -32,7 +29,6 @@ public class DigitalItemCategoryManager {
         return instances.get(categoryType);
     }
 
-    //  Baca tipe dari domain
     public static DigitalItemCategoryManager getManager(DigitalItem item) {
         return getInstance(item.getItemType());
     }

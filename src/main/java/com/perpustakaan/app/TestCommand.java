@@ -19,7 +19,6 @@ public class TestCommand {
         DigitalItem book2 =
                 new EBook("Refactoring","Fowler",2018,"PDF",5.1);
 
-        // ✅ User domain baru
         User validUser =
                 new User("Andi", true, true, 21);
 

@@ -18,15 +18,12 @@ public class TestObserver {
 
         LibraryCatalog catalog = new LibraryCatalog();
 
-        // tambah observer
         catalog.addObserver(new UserObserver("Ucok"));
         catalog.addObserver(new NotificationService());
 
-        // buat objek domain DigitalItem
         DigitalItem newBook =
                 new EBook("Design Patterns", "GoF", 1994, "PDF", 8.2);
 
-        // trigger observer
         catalog.addNewBook(newBook);
     }
 }

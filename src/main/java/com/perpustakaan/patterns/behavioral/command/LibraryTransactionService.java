@@ -16,19 +16,16 @@ public class LibraryTransactionService {
 
     public void borrow(User user, DigitalItem item) {
 
-        // 1️⃣ Login validation
         if (!user.isLoggedIn()) {
             System.out.println("FAILED: User not logged in.");
             return;
         }
 
-        // 2️⃣ Subscription validation
         if (!user.hasActiveSubscription()) {
             System.out.println("FAILED: No active subscription.");
             return;
         }
 
-        // 3️⃣ Item already borrowed check
         if (activeLoans.containsKey(item.getTitle())) {
             System.out.println("FAILED: Item already borrowed.");
             return;
@@ -36,7 +33,6 @@ public class LibraryTransactionService {
 
         int current = userBorrowCount.getOrDefault(user.getUsername(), 0);
 
-        // 4️⃣ Borrow limit check
         if (current >= MAX_BORROW_LIMIT) {
             System.out.println("FAILED: Borrow limit reached.");
             return;
