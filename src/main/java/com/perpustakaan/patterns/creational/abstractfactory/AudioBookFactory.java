@@ -26,11 +26,4 @@ public class AudioBookFactory implements DigitalItemFactory {
         return new AudioBook(title, author, year, defaultDurationMinutes, defaultNarrator);
     }
 
-    /**
-     * Overloaded method untuk membuat AudioBook dengan parameter lengkap
-     */
-    public DigitalItem createItem(String title, String author, int year, 
-                                  int durationMinutes, String narrator) {
-        return new AudioBook(title, author, year, durationMinutes, narrator);
-    }
 }

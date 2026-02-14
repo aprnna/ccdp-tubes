@@ -26,11 +26,4 @@ public class EBookFactory implements DigitalItemFactory {
         return new EBook(title, author, year, defaultFormat, defaultSizeMB);
     }
 
-    /**
-     * Overloaded method untuk membuat EBook dengan parameter lengkap
-     */
-    public DigitalItem createItem(String title, String author, int year, 
-                                  String format, double fileSizeMB) {
-        return new EBook(title, author, year, format, fileSizeMB);
-    }
 }

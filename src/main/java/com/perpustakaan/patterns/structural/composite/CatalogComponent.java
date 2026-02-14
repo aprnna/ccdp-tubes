@@ -15,7 +15,6 @@ public abstract class CatalogComponent {
         return name;
     }
 
-    // Operasi default untuk composite operations
     public void add(CatalogComponent component) {
         throw new UnsupportedOperationException("Cannot add to this component");
     }
@@ -28,7 +27,6 @@ public abstract class CatalogComponent {
         throw new UnsupportedOperationException("No children in this component");
     }
 
-    // Operasi yang harus diimplementasi oleh semua subclass
     public abstract void display(int depth);
     public abstract int count();
 }

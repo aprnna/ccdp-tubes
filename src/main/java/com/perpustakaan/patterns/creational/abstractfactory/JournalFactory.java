@@ -29,11 +29,4 @@ public class JournalFactory implements DigitalItemFactory {
         return new Journal(title, author, year, defaultVolume, defaultIssue, defaultPublisher);
     }
 
-    /**
-     * Overloaded method untuk membuat Journal dengan parameter lengkap
-     */
-    public DigitalItem createItem(String title, String author, int year, 
-                                  int volume, int issue, String publisher) {
-        return new Journal(title, author, year, volume, issue, publisher);
-    }
 }

@@ -42,10 +42,9 @@ public class BookItem extends CatalogComponent {
 
     @Override
     public int count() {
-        return 1; // Leaf node selalu menghitung dirinya sebagai 1 item
+        return 1;
     }
 
-    // Override operasi composite untuk mencegah operasi tidak valid
     @Override
     public void add(CatalogComponent component) {
         throw new UnsupportedOperationException("Cannot add to a book item");

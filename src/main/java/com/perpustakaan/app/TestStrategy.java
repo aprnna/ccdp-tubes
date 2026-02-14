@@ -61,16 +61,7 @@ public class TestStrategy {
             System.out.println("  ✓ " + item.getInfo());
         }
         System.out.println();
-        
-        String titleQuery2 = "Programming";
-        List<DigitalItem> results2 = searchContext.executeSearch(libraryCollection, titleQuery2);
-        System.out.println("Search query: \"" + titleQuery2 + "\"");
-        System.out.println("Results found: " + results2.size());
-        for (DigitalItem item : results2) {
-            System.out.println("  ✓ " + item.getInfo());
-        }
-        System.out.println();
-        
+
         // Test 2: Search by Author
         System.out.println("--- Test 2: Search by Author Strategy ---");
         searchContext.setStrategy(new SearchByAuthor());
@@ -83,16 +74,7 @@ public class TestStrategy {
             System.out.println("  ✓ " + item.getInfo());
         }
         System.out.println();
-        
-        String authorQuery2 = "Andrew";
-        List<DigitalItem> results4 = searchContext.executeSearch(libraryCollection, authorQuery2);
-        System.out.println("Search query: \"" + authorQuery2 + "\"");
-        System.out.println("Results found: " + results4.size());
-        for (DigitalItem item : results4) {
-            System.out.println("  ✓ " + item.getInfo());
-        }
-        System.out.println();
-        
+
         // Test 3: Search by Keyword
         System.out.println("--- Test 3: Search by Keyword Strategy ---");
         searchContext.setStrategy(new SearchByKeyword());
@@ -105,16 +87,7 @@ public class TestStrategy {
             System.out.println("  ✓ " + item.getInfo());
         }
         System.out.println();
-        
-        String keywordQuery2 = "2024";
-        List<DigitalItem> results6 = searchContext.executeSearch(libraryCollection, keywordQuery2);
-        System.out.println("Search query: \"" + keywordQuery2 + "\"");
-        System.out.println("Results found: " + results6.size());
-        for (DigitalItem item : results6) {
-            System.out.println("  ✓ " + item.getInfo());
-        }
-        System.out.println();
-        
+
         // Test 4: Runtime Strategy Switching
         System.out.println("--- Test 4: Runtime Strategy Switching ---");
         String query = "data";
