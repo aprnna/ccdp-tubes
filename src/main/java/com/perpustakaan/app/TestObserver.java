@@ -1,0 +1,32 @@
+package com.perpustakaan.app;
+
+import com.perpustakaan.domain.DigitalItem;
+import com.perpustakaan.domain.EBook;
+import com.perpustakaan.patterns.behavioral.observer.LibraryCatalog;
+import com.perpustakaan.patterns.behavioral.observer.NotificationService;
+import com.perpustakaan.patterns.behavioral.observer.User;
+
+/**
+ * TestObserver - Menguji Observer Pattern.
+ * Mengirim notifikasi saat buku baru ditambahkan ke katalog.
+ */
+public class TestObserver {
+
+    public static void main(String[] args){
+
+        System.out.println("=== TEST OBSERVER ===");
+
+        LibraryCatalog catalog = new LibraryCatalog();
+
+        // tambah observer
+        catalog.addObserver(new User("Ucok"));
+        catalog.addObserver(new NotificationService());
+
+        // buat objek domain DigitalItem
+        DigitalItem newBook =
+                new EBook("Design Patterns", "GoF", 1994, "PDF", 8.2);
+
+        // trigger observer
+        catalog.addNewBook(newBook);
+    }
+}
